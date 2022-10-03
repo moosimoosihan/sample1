@@ -10,7 +10,9 @@ fun main(){
 //    println("is this true? ${1==0}")
 //    println("this is 2\$a")
 //    checkNum(1)
-    forAndWhile()
+//    forAndWhile()
+//    nullcheck()
+//    ignoreNulls("0")
 }
 
 fun forAndWhile(){
@@ -39,6 +41,33 @@ fun forAndWhile(){
     }
     for((index,name)in students.withIndex()){
         println("${index+1}번째 학생 : ${name}")
+    }
+}
+
+fun nullcheck(){
+    var name : String = "Smoothie"
+
+    var nullName : String? = null
+
+    var nameInUpperCase = name.toUpperCase()
+
+    var nullNameInUpperCase = nullName?.toUpperCase()
+
+    // ?:  엘비스 연산자 만약 null이면 뒤에 내용 출력 null이 아니면 그대로 출력
+
+    val lastName : String? = "Hwang"
+    val fullName = name + " " + (lastName?: "NO LastName")
+    println(fullName)
+}
+
+fun ignoreNulls(str : String?){
+    val mNotNull : String = str!!
+    val upper = mNotNull.toUpperCase()
+    //!! null 이 아니다. 라고 확정 확실하게 null이 아닌 이상 사용 x
+
+    val email :String?= "123@nana.com"
+    email?.let{
+        println("my email is ${email}")//email 대신 it도 가능 null일 경우 프린트 안됨
     }
 }
 
