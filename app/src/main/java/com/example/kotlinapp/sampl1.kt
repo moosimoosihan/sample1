@@ -9,7 +9,37 @@ fun main(){
 //
 //    println("is this true? ${1==0}")
 //    println("this is 2\$a")
-    checkNum(1)
+//    checkNum(1)
+    forAndWhile()
+}
+
+fun forAndWhile(){
+    val students = arrayListOf("joy","james","jenny","jennifer")
+
+    for (name in students) {
+        println("$name")
+    }
+    var sum = 0
+    for (i in 1..10 step 2){
+        sum += i
+    }
+    var sum2 = 0
+    for (y in 10 downTo 1){
+        sum2 += y
+    }
+    var sum3 = 0
+    for (x in 1 until 100){//1~99 != 1..100
+        sum3 += x
+    }
+    println("$sum $sum2 $sum3")
+    var index = 0
+    while (index < 10) {
+        println("current index : ${index}")
+        index++
+    }
+    for((index,name)in students.withIndex()){
+        println("${index+1}번째 학생 : ${name}")
+    }
 }
 
 fun maxBy(a: Int , b: Int):Int {
