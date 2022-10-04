@@ -66,3 +66,5 @@ val calculateGrade : (Int) -> String = {
 fun invokeLamda(lamda : (Double) -> Boolean) : Boolean{
     return lamda(5.2343)
 }
+
+//pojo
